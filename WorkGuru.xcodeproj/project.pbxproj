@@ -13,13 +13,15 @@
 		80118D471FF3801000A71A7C /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 80118D441FF3801000A71A7C /* 3.mp4 */; };
 		80176413200629F700A69575 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80176412200629F700A69575 /* PickerTableViewCell.swift */; };
 		8017641520062A0E00A69575 /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8017641420062A0E00A69575 /* TextViewTableViewCell.swift */; };
+		802062E8200BC744009C52B1 /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802062E7200BC744009C52B1 /* EZSwipeController.swift */; };
+		802062EA200BC8A6009C52B1 /* MySwipeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802062E9200BC8A6009C52B1 /* MySwipeVC.swift */; };
+		802062EC200BDCD9009C52B1 /* SwipeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802062EB200BDCD9009C52B1 /* SwipeNavViewController.swift */; };
 		804BCBEF1FFF4F4400F04A0C /* EditInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BCBEE1FFF4F4400F04A0C /* EditInfoViewController.swift */; };
 		804BCBF11FFF56D000F04A0C /* ProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BCBF01FFF56D000F04A0C /* ProfileImageView.swift */; };
 		804BCBF31FFF5AA900F04A0C /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804BCBF21FFF5AA900F04A0C /* ProfileImageTableViewCell.swift */; };
 		804BCBF51FFF5C1300F04A0C /* ProfileImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804BCBF41FFF5C1300F04A0C /* ProfileImageView.xib */; };
 		80502AB71FF2094B00AA099F /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 80502AB61FF2094B00AA099F /* video.mp4 */; };
 		805213F31FF23360006C5A1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805213F21FF23360006C5A1A /* LoginViewController.swift */; };
-		809B081D2008D8290015DAE1 /* MainSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B081C2008D8290015DAE1 /* MainSwipeViewController.swift */; };
 		809B081F2008D9330015DAE1 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809B081E2008D9330015DAE1 /* Discover.storyboard */; };
 		809B08212008D95D0015DAE1 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 809B08202008D95D0015DAE1 /* Chat.storyboard */; };
 		809B8B181FFCC0A2000FEE80 /* HeadInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B171FFCC0A2000FEE80 /* HeadInfoTableViewCell.swift */; };
@@ -27,6 +29,8 @@
 		809B8B1C1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1B1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift */; };
 		809B8B1E1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1D1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift */; };
 		809B8B201FFCC1A8000FEE80 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1F1FFCC1A8000FEE80 /* SettingViewController.swift */; };
+		80ABCA94200B51A40012974E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABCA93200B51A40012974E /* NavigationBar.swift */; };
+		80ABCA96200B52BB0012974E /* MainSwipeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABCA95200B52BB0012974E /* MainSwipeCollectionViewController.swift */; };
 		80B67CA21FF3A4770058BA84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80B67CA11FF3A4770058BA84 /* GoogleService-Info.plist */; };
 		80BBE5411FF6295A005B29A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BBE5401FF6295A005B29A8 /* Setting.storyboard */; };
 		80BBE5431FF62A80005B29A8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BBE5421FF62A80005B29A8 /* FirstViewController.swift */; };
@@ -74,6 +78,9 @@
 		80118D441FF3801000A71A7C /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
 		80176412200629F700A69575 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
 		8017641420062A0E00A69575 /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		802062E7200BC744009C52B1 /* EZSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZSwipeController.swift; sourceTree = "<group>"; };
+		802062E9200BC8A6009C52B1 /* MySwipeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwipeVC.swift; sourceTree = "<group>"; };
+		802062EB200BDCD9009C52B1 /* SwipeNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavViewController.swift; sourceTree = "<group>"; };
 		804BCBEE1FFF4F4400F04A0C /* EditInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInfoViewController.swift; sourceTree = "<group>"; };
 		804BCBF01FFF56D000F04A0C /* ProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageView.swift; sourceTree = "<group>"; };
 		804BCBF21FFF5AA900F04A0C /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
@@ -81,7 +88,6 @@
 		80502AB61FF2094B00AA099F /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		805213F21FF23360006C5A1A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8098E6451FFE878A00981BA3 /* WorkGuru.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkGuru.entitlements; sourceTree = "<group>"; };
-		809B081C2008D8290015DAE1 /* MainSwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainSwipeViewController.swift; path = WorkGuru/MainSwipeViewController.swift; sourceTree = SOURCE_ROOT; };
 		809B081E2008D9330015DAE1 /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		809B08202008D95D0015DAE1 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		809B8B171FFCC0A2000FEE80 /* HeadInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeadInfoTableViewCell.swift; path = WorkGuru/Setting/HeadInfoTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -89,6 +95,8 @@
 		809B8B1B1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderInfoTableViewCell.swift; sourceTree = "<group>"; };
 		809B8B1D1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRangeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		809B8B1F1FFCC1A8000FEE80 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = WorkGuru/Setting/SettingViewController.swift; sourceTree = SOURCE_ROOT; };
+		80ABCA93200B51A40012974E /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		80ABCA95200B52BB0012974E /* MainSwipeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSwipeCollectionViewController.swift; sourceTree = "<group>"; };
 		80B67CA11FF3A4770058BA84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80BBE5401FF6295A005B29A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		80BBE5421FF62A80005B29A8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +203,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		80ABCA92200B50380012974E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				802062EB200BDCD9009C52B1 /* SwipeNavViewController.swift */,
+				802062E7200BC744009C52B1 /* EZSwipeController.swift */,
+				802062E9200BC8A6009C52B1 /* MySwipeVC.swift */,
+				80ABCA93200B51A40012974E /* NavigationBar.swift */,
+				80ABCA95200B52BB0012974E /* MainSwipeCollectionViewController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		80C3A7241FFBF94E00526FC2 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,11 +257,11 @@
 				80502AB81FF209EE00AA099F /* Resources */,
 				804BCBF01FFF56D000F04A0C /* ProfileImageView.swift */,
 				804BCBF41FFF5C1300F04A0C /* ProfileImageView.xib */,
+				80ABCA92200B50380012974E /* Navigation */,
 				804BCBF61FFF5C7D00F04A0C /* Setting */,
 				804BCBF71FFF5CC700F04A0C /* EditInfo */,
 				80F5DA4F200926D1001D592B /* Global.swift */,
 				80F7DC841FF1EC9A008FB50D /* AppDelegate.swift */,
-				809B081C2008D8290015DAE1 /* MainSwipeViewController.swift */,
 				80BBE5421FF62A80005B29A8 /* FirstViewController.swift */,
 				805213F21FF23360006C5A1A /* LoginViewController.swift */,
 				80C3A7221FFBF93900526FC2 /* MainViewController.swift */,
@@ -520,8 +540,6 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/MARKRangeSlider/MARKRangeSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/SLPagingViewSwift-Swift3/SLPagingViewSwift_Swift3.framework",
-				"${BUILT_PRODUCTS_DIR}/SwipeNavigationController/SwipeNavigationController.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -533,8 +551,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MARKRangeSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SLPagingViewSwift_Swift3.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeNavigationController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,11 +625,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				809B081D2008D8290015DAE1 /* MainSwipeViewController.swift in Sources */,
 				804BCBF11FFF56D000F04A0C /* ProfileImageView.swift in Sources */,
+				802062EC200BDCD9009C52B1 /* SwipeNavViewController.swift in Sources */,
 				80CA91DF20049AF300C1B049 /* AboutTableViewCell.swift in Sources */,
 				805213F31FF23360006C5A1A /* LoginViewController.swift in Sources */,
 				80176413200629F700A69575 /* PickerTableViewCell.swift in Sources */,
+				802062E8200BC744009C52B1 /* EZSwipeController.swift in Sources */,
+				80ABCA94200B51A40012974E /* NavigationBar.swift in Sources */,
+				80ABCA96200B52BB0012974E /* MainSwipeCollectionViewController.swift in Sources */,
 				809B8B1A1FFCC0C8000FEE80 /* SelectInfoTableViewCell.swift in Sources */,
 				80CA91E52004C21900C1B049 /* ContactInfoTableViewCell.swift in Sources */,
 				80F7DC851FF1EC9A008FB50D /* AppDelegate.swift in Sources */,
@@ -624,6 +643,7 @@
 				809B8B1E1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift in Sources */,
 				809B8B201FFCC1A8000FEE80 /* SettingViewController.swift in Sources */,
 				809B8B1C1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift in Sources */,
+				802062EA200BC8A6009C52B1 /* MySwipeVC.swift in Sources */,
 				8017641520062A0E00A69575 /* TextViewTableViewCell.swift in Sources */,
 				80CA91E72004C74000C1B049 /* UploadInfoTableViewCell.swift in Sources */,
 				80C3A7231FFBF93900526FC2 /* MainViewController.swift in Sources */,

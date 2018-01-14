@@ -18,20 +18,23 @@ class FirstViewController: UIViewController {
 
     @IBAction func goToMainPage(_ sender: Any) {
         
-        instantiateControllers()
-        setItems()
-        
-        let items = [UIImageView(image: chat),
-                     UIImageView(image: gear),
-                     UIImageView(image: profile)]
-        
-        let controllers = [oneVC!,
-                           twoVC!,
-                           threeVC!]
-//        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
-        
-        setupController()
-        setRoot()
+//        instantiateControllers()
+//        setItems()
+//        
+//        let items = [UIImageView(image: chat),
+//                     UIImageView(image: gear),
+//                     UIImageView(image: profile)]
+//        
+//        let controllers = [oneVC!,
+//                           twoVC!,
+//                           threeVC!]
+////        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
+//        
+//        setupController()
+//        setRoot()
+        let window = UIApplication.shared.keyWindow
+        window?.rootViewController = MySwipeVC()
+        window?.makeKeyAndVisible()
         self.dismiss(animated: true, completion: nil)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle {

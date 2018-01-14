@@ -11,8 +11,8 @@ target 'WorkGuru' do
   pod 'FBSDKLoginKit'
   pod 'ImageSlideshow', '~> 1.4'
   pod 'MARKRangeSlider'
-  pod 'SwipeNavigationController', '~> 2.0.0'
-  pod 'SLPagingViewSwift-Swift3', :git => 'https://github.com/davidseek/SLPagingViewSwift-Swift-3-Tinder-Twitter.git'
+#  pod 'SwipeNavigationController', '~> 2.0.0'
+#  pod 'SLPagingViewSwift-Swift3', :git => 'https://github.com/davidseek/SLPagingViewSwift-Swift-3-Tinder-Twitter.git'
   target 'WorkGuruTests' do
     inherit! :search_paths
     # Pods for testing
