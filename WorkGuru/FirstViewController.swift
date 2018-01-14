@@ -28,7 +28,7 @@ class FirstViewController: UIViewController {
         let controllers = [oneVC!,
                            twoVC!,
                            threeVC!]
-        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
+//        controller = SLPagingViewSwift(items: items, controllers: controllers, showPageControl: false)
         
         setupController()
         setRoot()
