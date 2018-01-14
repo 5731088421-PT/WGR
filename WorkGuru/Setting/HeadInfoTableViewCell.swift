@@ -48,7 +48,7 @@ class HeadInfoTableViewCell: UITableViewCell {
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [ 0.65, 0.95]
+        gradientLayer.locations = [ 0.75, 0.95]
         gradientLayer.frame = self.bounds
         
         self.layer.insertSublayer(gradientLayer, at: 0)

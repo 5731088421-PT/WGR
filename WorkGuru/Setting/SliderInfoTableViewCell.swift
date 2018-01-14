@@ -13,7 +13,11 @@ class SliderInfoTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectedLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
+    
     @IBAction func sliderChange(_ sender: Any) {
+        let val = String(format:"%.0f", slider.value)
+        delegate?.changeSelectedTo(value: [val], at: indexPath!, reloadCell: false)
+        select = val
     }
     
     var name:String?{
@@ -22,9 +26,19 @@ class SliderInfoTableViewCell: UITableViewCell {
         }
     }
     
-    var select:String?{
+    private var select:String?{
         didSet{
             selectedLabel.text = select
+        }
+    }
+    
+    var sliderRangeValue:[Float]?{
+        didSet{
+            guard let value = sliderRangeValue else {
+                return
+            }
+            slider.minimumValue = value[0]
+            slider.maximumValue = value[1]
         }
     }
     
@@ -34,11 +48,19 @@ class SliderInfoTableViewCell: UITableViewCell {
                 return
             }
             slider.setValue(value, animated: true)
+            select = String(format:"%.0f", value)
         }
     }
     
+    var delegate : changeInputDataDelegate?
+    var indexPath : IndexPath?
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        slider.setThumbImage(#imageLiteral(resourceName: "SliderThumb"), for: UIControlState.normal)
+        slider.setThumbImage(#imageLiteral(resourceName: "SliderThumb"), for: UIControlState.highlighted)
         // Initialization code
     }
 

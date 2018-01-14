@@ -10,6 +10,20 @@ import UIKit
 
 class UploadInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBAction func scanPress(_ sender: Any) {
+        
+    }
+    @IBAction func uploadPress(_ sender: Any) {
+        
+    }
+    
+    var name:String?{
+        didSet{
+            nameLabel.text = name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

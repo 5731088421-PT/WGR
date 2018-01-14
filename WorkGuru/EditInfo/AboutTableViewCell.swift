@@ -10,6 +10,21 @@ import UIKit
 
 class AboutTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var textCountLabel: UILabel!
+    
+    var name:String?{
+        didSet{
+            nameLabel.text = name
+        }
+    }
+    var detail:String?{
+        didSet{
+            detailLabel.text = detail
+            textCountLabel.text = String(describing: detail?.count)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

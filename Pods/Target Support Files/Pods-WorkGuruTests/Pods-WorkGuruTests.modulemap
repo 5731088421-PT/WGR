@@ -1,0 +1,6 @@
+framework module Pods_WorkGuruTests {
+  umbrella header "Pods-WorkGuruTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

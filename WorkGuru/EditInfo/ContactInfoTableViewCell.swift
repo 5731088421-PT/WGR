@@ -10,6 +10,25 @@ import UIKit
 
 class ContactInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mailLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
+    var name:String?{
+        didSet{
+            nameLabel.text = name
+        }
+    }
+    var mail:String?{
+        didSet{
+            mailLabel.text = mail
+        }
+    }
+    var phone:String?{
+        didSet{
+            phoneLabel.text = phone
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

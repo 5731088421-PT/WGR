@@ -10,6 +10,17 @@ import UIKit
 
 class SwitchInfoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBAction func switchPress(_ sender: Any) {
+        
+    }
+    
+    var name:String?{
+        didSet{
+            nameLabel.text = name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
