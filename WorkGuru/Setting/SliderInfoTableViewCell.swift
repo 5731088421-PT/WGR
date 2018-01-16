@@ -16,7 +16,7 @@ class SliderInfoTableViewCell: UITableViewCell {
     
     @IBAction func sliderChange(_ sender: Any) {
         let val = String(format:"%.0f", slider.value)
-        delegate?.changeSelectedTo(value: [val], at: indexPath!, reloadCell: false)
+        delegate?.changeSelectedTo(values: [val], at: indexPath!, reloadCell: false)
         select = val
     }
     

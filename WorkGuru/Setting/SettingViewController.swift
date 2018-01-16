@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 protocol changeInputDataDelegate {
-    func changeSelectedTo(value:[String],at indexpath:IndexPath, reloadCell : Bool)
+    func changeSelectedTo(values:[String],at indexpath:IndexPath, reloadCell : Bool)
 }
 protocol beginEditSelectedViewDelegate {
     func selectForEditing(From indexPath:IndexPath)
@@ -37,11 +37,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     var cellType: [[SettingViewController.CellType]]!
     var cellName: [[String]]!
     var cellField: [[UserDataField?]]!
-    var cellValue = [IndexPath : [String]]()
-    var userData = [UserDataField : String]()
+//    var cellValue = [IndexPath : [String]]()
+//    var userData = [UserDataField : String]()
     
-    var isFirstLogin = true
+    var isFirstLogin = false
     var userType: Int = 0
+    var userData = UserData()
     var profileURL: String?
     var userName: String?
     var userWork: String?
@@ -90,8 +91,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func changeSelectedTo(value: [String], at indexpath : IndexPath, reloadCell : Bool) {
-        cellValue[indexpath] = value
+    func changeSelectedTo(values: [String], at indexpath : IndexPath, reloadCell : Bool) {
+        if let field = cellField[indexpath.section][indexpath.row]{
+            userData.setUserValue(Field: field, Values: values)
+        }
         if(reloadCell){
             tableView.reloadRows(at: [indexpath], with: UITableViewRowAnimation.fade)
         }
@@ -116,9 +119,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "headInfo", for: indexPath) as? HeadInfoTableViewCell  else {
                 fatalError("The dequeued cell is not an instance.")
             }
-            cell.name = userData[.name] ?? "Loading"
-            cell.work = userData[.work] ?? "Loading"
-            getImageFromWeb(userData[.userProfileImage] ?? "") { (image) in
+            cell.name = userData.getUserValue(Field: .name)
+            cell.work = userData.getUserValue(Field: .work)
+            getImageFromWeb(userData.getUserValue(Field: .userProfileImage)) { (image) in
                 if let image = image {
                     cell.profileImage.image = image
                 } // if you use an Else statement, it will be in background
@@ -131,10 +134,8 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 fatalError("The dequeued cell is not an instance.")
             }
             cell.name = cellName[indexPath.section][indexPath.row]
-            if let val = cellValue[indexPath]{
-                cell.select = val[0]
-            } else {
-                cell.select = "No Value"
+            if let field = cellField[indexPath.section][indexPath.row]{
+                cell.select = userData.getUserValue(Field: field)
             }
             return cell
         case CellType.sliderInfo:
@@ -185,15 +186,10 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.editDelegate = self
             let parentIndexPath = IndexPath(row: indexPath.row-1, section: indexPath.section)
             cell.parentIndexPath = parentIndexPath
-            if let value = cellValue[parentIndexPath] {
-                if value.count > 0{
-                    cell.textData = value[0]
-                }
-                else {
-                    cell.textData = ""
-                }
-            }
-            else {
+            
+            if let field = cellField[indexPath.section][indexPath.row]{
+                cell.textData = userData.getUserValue(Field: field)
+            } else {
                 cell.textData = ""
             }
             
@@ -332,13 +328,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             let userID = user.uid
             ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
                 // Get user value
-//                self.userData = (snapshot.value as? [UserDataField : String])!
-//                self.tableView.reloadData()
+                let data = snapshot.value as! [String : String]
+                    self.userData.setUserData(From: data)
+                    self.tableView.reloadData()
                 
             }) { (error) in
                 print(error.localizedDescription)
             }
-            
         }
     }
     
@@ -376,13 +372,12 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             // ...
         }
         
-        let userdata = UserData()
-        userdata.name = userName
-        userdata.email = email
-        userdata.userProfileImage = profileURL
+        userData.name = userName
+        userData.email = email
+        userData.userProfileImage = profileURL
         
         if let user = Auth.auth().currentUser {
-            let data = userdata.getUserData()
+            let data = userData.getUserDataDictionary()
             ref.child("users/\(user.uid)").setValue(data)
         }
         

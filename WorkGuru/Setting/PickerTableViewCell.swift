@@ -33,7 +33,7 @@ class PickerTableViewCell: UITableViewCell,UIPickerViewDelegate,UIPickerViewData
     
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.delegate?.changeSelectedTo(value: [pickerData![row]], at: parentIndexPath!, reloadCell: true)
+        self.delegate?.changeSelectedTo(values: [pickerData![row]], at: parentIndexPath!, reloadCell: true)
     }
     
     @IBOutlet weak var Picker: UIPickerView!

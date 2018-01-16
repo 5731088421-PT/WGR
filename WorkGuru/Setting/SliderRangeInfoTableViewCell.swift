@@ -55,7 +55,7 @@ class SliderRangeInfoTableViewCell: UITableViewCell {
         let val = [String(format:"%.0f", rangeSlider.leftValue),
                    String(format:"%.0f", rangeSlider.rightValue)]
         select = toString(from: [rangeSlider.leftValue,rangeSlider.rightValue])
-        delegate?.changeSelectedTo(value: val, at: indexPath!, reloadCell: false)
+        delegate?.changeSelectedTo(values: val, at: indexPath!, reloadCell: false)
     }
     
     private func toString(from value: [CGFloat]) -> String{

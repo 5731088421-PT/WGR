@@ -70,7 +70,7 @@ class TextViewTableViewCell: UITableViewCell, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        delegate?.changeSelectedTo(value: [textView.text], at: parentIndexPath!, reloadCell: true)
+        delegate?.changeSelectedTo(values: [textView.text], at: parentIndexPath!, reloadCell: true)
         if textView.text.isEmpty {
             textData = ""
         }
