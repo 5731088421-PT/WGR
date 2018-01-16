@@ -29,9 +29,10 @@
 		809B8B1C1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1B1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift */; };
 		809B8B1E1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1D1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift */; };
 		809B8B201FFCC1A8000FEE80 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B8B1F1FFCC1A8000FEE80 /* SettingViewController.swift */; };
+		80AA562E200DF57E00DA9233 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AA562D200DF57E00DA9233 /* UserData.swift */; };
+		80AA5630200E18A500DA9233 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80AA562F200E18A500DA9233 /* GoogleService-Info.plist */; };
 		80ABCA94200B51A40012974E /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABCA93200B51A40012974E /* NavigationBar.swift */; };
 		80ABCA96200B52BB0012974E /* MainSwipeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ABCA95200B52BB0012974E /* MainSwipeCollectionViewController.swift */; };
-		80B67CA21FF3A4770058BA84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80B67CA11FF3A4770058BA84 /* GoogleService-Info.plist */; };
 		80BBE5411FF6295A005B29A8 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80BBE5401FF6295A005B29A8 /* Setting.storyboard */; };
 		80BBE5431FF62A80005B29A8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BBE5421FF62A80005B29A8 /* FirstViewController.swift */; };
 		80C3A7231FFBF93900526FC2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C3A7221FFBF93900526FC2 /* MainViewController.swift */; };
@@ -95,9 +96,10 @@
 		809B8B1B1FFCC0D5000FEE80 /* SliderInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderInfoTableViewCell.swift; sourceTree = "<group>"; };
 		809B8B1D1FFCC0F0000FEE80 /* SliderRangeInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderRangeInfoTableViewCell.swift; sourceTree = "<group>"; };
 		809B8B1F1FFCC1A8000FEE80 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = WorkGuru/Setting/SettingViewController.swift; sourceTree = SOURCE_ROOT; };
+		80AA562D200DF57E00DA9233 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		80AA562F200E18A500DA9233 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80ABCA93200B51A40012974E /* NavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		80ABCA95200B52BB0012974E /* MainSwipeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSwipeCollectionViewController.swift; sourceTree = "<group>"; };
-		80B67CA11FF3A4770058BA84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80BBE5401FF6295A005B29A8 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		80BBE5421FF62A80005B29A8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		80C3A7221FFBF93900526FC2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		804BCBF61FFF5C7D00F04A0C /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				80AA562D200DF57E00DA9233 /* UserData.swift */,
 				809B8B1F1FFCC1A8000FEE80 /* SettingViewController.swift */,
 				80EA4E8D1FFEB57800F091C4 /* SectionHeaderTableViewCell.swift */,
 				809B8B171FFCC0A2000FEE80 /* HeadInfoTableViewCell.swift */,
@@ -265,8 +268,8 @@
 				80BBE5421FF62A80005B29A8 /* FirstViewController.swift */,
 				805213F21FF23360006C5A1A /* LoginViewController.swift */,
 				80C3A7221FFBF93900526FC2 /* MainViewController.swift */,
-				80B67CA11FF3A4770058BA84 /* GoogleService-Info.plist */,
 				80F7DC901FF1EC9A008FB50D /* Info.plist */,
+				80AA562F200E18A500DA9233 /* GoogleService-Info.plist */,
 				80CA91E22004A43D00C1B049 /* Assets.xcassets */,
 			);
 			path = WorkGuru;
@@ -427,10 +430,10 @@
 			files = (
 				804BCBF51FFF5C1300F04A0C /* ProfileImageView.xib in Resources */,
 				80118D461FF3801000A71A7C /* 2.mp4 in Resources */,
-				80B67CA21FF3A4770058BA84 /* GoogleService-Info.plist in Resources */,
 				809B081F2008D9330015DAE1 /* Discover.storyboard in Resources */,
 				80F7DC8F1FF1EC9A008FB50D /* LaunchScreen.storyboard in Resources */,
 				80CA91E32004A43E00C1B049 /* Assets.xcassets in Resources */,
+				80AA5630200E18A500DA9233 /* GoogleService-Info.plist in Resources */,
 				809B08212008D95D0015DAE1 /* Chat.storyboard in Resources */,
 				80118D451FF3801000A71A7C /* 1.mp4 in Resources */,
 				80BBE5411FF6295A005B29A8 /* Setting.storyboard in Resources */,
@@ -540,6 +543,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/MARKRangeSlider/MARKRangeSlider.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -551,6 +555,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MARKRangeSlider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80AA562E200DF57E00DA9233 /* UserData.swift in Sources */,
 				804BCBF11FFF56D000F04A0C /* ProfileImageView.swift in Sources */,
 				802062EC200BDCD9009C52B1 /* SwipeNavViewController.swift in Sources */,
 				80CA91DF20049AF300C1B049 /* AboutTableViewCell.swift in Sources */,
@@ -819,10 +825,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WorkGuru/WorkGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQVQ5E26K7;
+				DEVELOPMENT_TEAM = Y3C4ED9N2Y;
 				INFOPLIST_FILE = WorkGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WorkGuru.WorkGuru;
+				PRODUCT_BUNDLE_IDENTIFIER = Inspirio.WorkGuru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -839,10 +845,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WorkGuru/WorkGuru.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AQVQ5E26K7;
+				DEVELOPMENT_TEAM = Y3C4ED9N2Y;
 				INFOPLIST_FILE = WorkGuru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = WorkGuru.WorkGuru;
+				PRODUCT_BUNDLE_IDENTIFIER = Inspirio.WorkGuru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;

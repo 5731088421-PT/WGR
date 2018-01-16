@@ -108,37 +108,37 @@ class MainSwipeCollectionViewController: UICollectionViewController {
 }
 
 // MARK - CollectionView Data Source
-extension MainSwipeCollectionViewController {
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.row {
-        case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCellID", for: indexPath as IndexPath) as! ProfileCollectionViewCell
-            return cell
-
-        case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SwapCellID", for: indexPath as IndexPath) as! SwapCollectionViewCell
-            return cell
-
-        case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContactsCellID", for: indexPath as IndexPath) as! ContactsCollectionViewCell
-            return cell
-
-        default:
-
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCellID", for: indexPath as IndexPath) as! ProfileCollectionViewCell
-            return cell
-        }
-    }
-}
+//extension MainSwipeCollectionViewController {
+//    
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//    
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return 3
+//    }
+//    
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        switch indexPath.row {
+//        case 0:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCellID", for: indexPath as IndexPath) as! ProfileCollectionViewCell
+//            return cell
+//
+//        case 1:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SwapCellID", for: indexPath as IndexPath) as! SwapCollectionViewCell
+//            return cell
+//
+//        case 2:
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContactsCellID", for: indexPath as IndexPath) as! ContactsCollectionViewCell
+//            return cell
+//
+//        default:
+//
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCellID", for: indexPath as IndexPath) as! ProfileCollectionViewCell
+//            return cell
+//        }
+//    }
+//}
 
 
 // MARK - CollectionView Delegate Flow Layout

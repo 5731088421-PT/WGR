@@ -74,7 +74,7 @@
                                                         </constraints>
                                                         <state key="normal" image="button-A_Business-normal"/>
                                                         <state key="selected" image="button-A_Business-pressed"/>
-                                                        <state key="highlighted" image="button-A_Recuriter-focus"/>
+                                                        <state key="highlighted" image="button-A_Business-focus"/>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-ZP-uq9">
                                                         <rect key="frame" x="125" y="0.0" width="105" height="105"/>
@@ -118,16 +118,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6Cj-Bc-TB8">
-                                <rect key="frame" x="0.0" y="20" width="0.0" height="617"/>
+                                <rect key="frame" x="15" y="20" width="375" height="617"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" verticalHuggingPriority="251" image="work-guru-logo-login" translatesAutoresizingMaskIntoConstraints="NO" id="vh7-M5-vl1">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="b0S-c7-r0A"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAZ-SS-MV5" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                        <rect key="frame" x="0.0" y="76" width="0.0" height="133.5"/>
+                                        <rect key="frame" x="0.0" y="76" width="375" height="133.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGI-Cu-IO2" customClass="ImageSlideshow" customModule="ImageSlideshow">
                                                 <rect key="frame" x="-55" y="-91" width="375" height="446"/>
@@ -138,19 +138,19 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pi-mi-cJp">
-                                        <rect key="frame" x="0.0" y="225.5" width="0.0" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="225.5" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zmb-2W-sBG">
-                                        <rect key="frame" x="0.0" y="262" width="0.0" height="239"/>
+                                        <rect key="frame" x="0.0" y="262" width="375" height="239"/>
                                     </pageControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BIg-15-ERR">
-                                        <rect key="frame" x="0.0" y="517" width="0.0" height="100"/>
+                                        <rect key="frame" x="0.0" y="517" width="375" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-AN-GOv">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187.5" height="100"/>
                                                 <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="button Login FB-normal"/>
                                                 <state key="selected" image="button Login FB-presed"/>
@@ -160,7 +160,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2TK-fv-di2">
-                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="100"/>
+                                                <rect key="frame" x="172.5" y="0.0" width="187.5" height="100"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                 <state key="normal" image="button_Login IN-normal"/>
                                                 <state key="selected" image="button_Login IN-pressed"/>
@@ -245,7 +245,6 @@
         <!--Navigation Controller-->
         <scene sceneID="vXT-VI-uYx">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A90-sk-8tZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Vkp-xF-nw4" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nq3-KL-q3P">
@@ -257,18 +256,19 @@
                         <segue destination="dZ3-tL-9t3" kind="relationship" relationship="rootViewController" id="yKX-kJ-mhD"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A90-sk-8tZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1284.8" y="839.28035982008998"/>
         </scene>
         <!--Swipe Nav View Controller-->
         <scene sceneID="xGY-5H-Glf">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="dZ3-tL-9t3" customClass="SwipeNavViewController" customModule="WorkGuru" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="dZ3-tL-9t3" customClass="SwipeNavViewController" customModule="WorkGuru" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="BgG-o3-Hak"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnu-lb-CNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1927" y="839"/>
+            <point key="canvasLocation" x="2110" y="839"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dTG-En-9xE">
@@ -278,17 +278,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3BE-UC-6fA"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tws-fp-pI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3109" y="972"/>
+            <point key="canvasLocation" x="3001" y="839"/>
         </scene>
     </scenes>
     <resources>
         <image name="button Login FB-focus" width="100" height="100"/>
         <image name="button Login FB-normal" width="100" height="100"/>
         <image name="button Login FB-presed" width="100" height="100"/>
+        <image name="button-A_Business-focus" width="105" height="105"/>
         <image name="button-A_Business-normal" width="105" height="105"/>
         <image name="button-A_Business-pressed" width="105" height="105"/>
         <image name="button-A_Recuriter-focus" width="105" height="105"/>

@@ -19,8 +19,10 @@ protocol beginEditSelectedViewDelegate {
 
 class SettingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, changeInputDataDelegate, beginEditSelectedViewDelegate {
     
-
+    var ref: DatabaseReference!
+    
     @IBOutlet weak var tableView: UITableView!
+    
     enum CellType {
         case headInfo
         case selectInfo
@@ -32,27 +34,13 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     var selectedCell = [-1,-1]
-    let cellType = [[CellType.headInfo],
-                      [CellType.sectionHeader,
-                       CellType.selectInfo,CellType.picker,
-                       CellType.selectInfo,CellType.picker,
-                       CellType.selectInfo,CellType.Textview,
-                       CellType.sliderRangeInfo],
-                      [CellType.sectionHeader,
-                       CellType.sliderRangeInfo,
-                       CellType.selectInfo,CellType.picker,
-                       CellType.sliderRangeInfo,
-                       CellType.selectInfo,CellType.picker,
-                       CellType.selectInfo,CellType.picker,
-                       CellType.sliderInfo,
-                       CellType.selectInfo,CellType.picker],
-                      [CellType.sectionHeader,
-                       CellType.sliderInfo,
-                       CellType.sliderInfo]]
-    
-    var cellName: [[String?]] = [[]]
+    var cellType: [[SettingViewController.CellType]]!
+    var cellName: [[String]]!
+    var cellField: [[UserDataField?]]!
     var cellValue = [IndexPath : [String]]()
+    var userData = [UserDataField : String]()
     
+    var isFirstLogin = true
     var userType: Int = 0
     var profileURL: String?
     var userName: String?
@@ -63,9 +51,20 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardDidHide, object: nil)
+        
+        ref = Database.database().reference()
         setUpData(userType: userType)
+        
+        if isFirstLogin{
+            setDefaultUserData()
+        } else {
+            getUserData()
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -117,9 +116,9 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "headInfo", for: indexPath) as? HeadInfoTableViewCell  else {
                 fatalError("The dequeued cell is not an instance.")
             }
-            cell.name = userName
-            cell.work = "Work"
-            getImageFromWeb(profileURL ?? "") { (image) in
+            cell.name = userData[.name] ?? "Loading"
+            cell.work = userData[.work] ?? "Loading"
+            getImageFromWeb(userData[.userProfileImage] ?? "") { (image) in
                 if let image = image {
                     cell.profileImage.image = image
                 } // if you use an Else statement, it will be in background
@@ -260,6 +259,25 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                         ["App Setting",
                          "Font size",
                          "Language"]]
+            
+            cellField = [[],
+                         [nil,
+                          UserDataField.typeOfWork, nil,
+                          UserDataField.fieldOfWork, nil,
+                          UserDataField.desiredJobsTitle, nil,
+                          UserDataField.expectedSalary],
+                         [nil,
+                          UserDataField.leaderExperience,
+                          UserDataField.leaderSkills, nil,
+                          UserDataField.desiredLeaderAge,
+                          UserDataField.desiredLeaderGender, nil,
+                          UserDataField.leaderNationality, nil,
+                          UserDataField.distance,
+                          UserDataField.chooseLocation, nil],
+                         [nil,
+                          UserDataField.fontSize,
+                          UserDataField.language]]
+            
         default:
             cellName = [[],
                         ["What job are you offering?",
@@ -280,6 +298,24 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                          "Language"]]
         }
         
+        cellType = [[CellType.headInfo],
+                    [CellType.sectionHeader,
+                     CellType.selectInfo,CellType.picker,
+                     CellType.selectInfo,CellType.picker,
+                     CellType.selectInfo,CellType.Textview,
+                     CellType.sliderRangeInfo],
+                    [CellType.sectionHeader,
+                     CellType.sliderRangeInfo,
+                     CellType.selectInfo,CellType.picker,
+                     CellType.sliderRangeInfo,
+                     CellType.selectInfo,CellType.picker,
+                     CellType.selectInfo,CellType.picker,
+                     CellType.sliderInfo,
+                     CellType.selectInfo,CellType.picker],
+                    [CellType.sectionHeader,
+                     CellType.sliderInfo,
+                     CellType.sliderInfo]]
+        
         pickerData = [IndexPath(row: 2, section: 1):["Fixed Work","Flexible Work ","Full Time","Part Time"],
                       IndexPath(row: 4, section: 1):["Accounting", "Admin & HR", "Aerospace", "Aerospace", "Agriculture ", "Alchololic beverages", "Architechture", "Automotive", "Banking / Finance", "Beauty Care / Health", "Building & Construction", "Chemical", "Construction", "Defense", "Design ", "Education", "Energy", "Engineering", "Entertainment", "Financial services", "FMCG ", "Food and Beverage", "Government", "Health care industry", "Hospitality", "Information Technology (IT)", "Insurance", "Internet / Online Media / Digital", "Management Consulting", "Manufacturing", "Manufacturing", "Marketing / Public Relations", "Media & Advertising", "Medical", "Merchandising & Purchasing", "Pharmaceutical", "Professional Services", "Property", "Public / Civil", "Publishing", "Reneweable Energy", "Sales, CS & Business Devpt", "Sciences, Lab, R&D", "Software industry", "Telecommunications", "Textlile", "Tobacco", "Transportation & Logistics", "Shipping"],
                       IndexPath(row: 3, section: 2):["Accounting", "Admin & HR", "Aerospace", "Aerospace", "Agriculture ", "Alchololic beverages", "Architechture", "Automotive", "Banking / Finance", "Beauty Care / Health", "Building & Construction", "Chemical", "Construction", "Defense", "Design ", "Education", "Energy", "Engineering", "Entertainment", "Financial services", "FMCG ", "Food and Beverage", "Government", "Health care industry", "Hospitality", "Information Technology (IT)", "Insurance", "Internet / Online Media / Digital", "Management Consulting", "Manufacturing", "Manufacturing", "Marketing / Public Relations", "Media & Advertising", "Medical", "Merchandising & Purchasing", "Pharmaceutical", "Professional Services", "Property", "Public / Civil", "Publishing", "Reneweable Energy", "Sales, CS & Business Devpt", "Sciences, Lab, R&D", "Software industry", "Telecommunications", "Textlile", "Tobacco", "Transportation & Logistics", "Shipping"],
@@ -288,7 +324,28 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                       IndexPath(row: 11, section: 2):["Afghan", "Albanian", "Algerian", "American", "Andorran", "Angolan", "Antiguans", "Argentinean", "Armenian", "Australian", "Austrian", "Azerbaijani", "Bahamian", "Bahraini", "Bangladeshi", "Barbadian", "Barbudans", "Batswana", "Belarusian", "Belgian", "Belizean", "Beninese", "Bhutanese", "Bolivian", "Bosnian", "Brazilian", "British", "Bruneian", "Bulgarian", "Burkinabe", "Burmese", "Burundian", "Cambodian", "Cameroonian", "Canadian", "Cape Verdean", "Central African", "Chadian", "Chilean", "Chinese", "Colombian", "Comoran", "Congolese", "Costa Rican", "Croatian", "Cuban", "Cypriot", "Czech", "Danish", "Djibouti", "Dominican", "Dutch", "East Timorese", "Ecuadorean", "Egyptian", "Emirian", "Equatorial Guinean", "Eritrean", "Estonian", "Ethiopian", "Fijian", "Filipino", "Finnish", "French", "Gabonese", "Gambian", "Georgian", "German", "Ghanaian", "Greek", "Grenadian", "Guatemalan", "Guinea-Bissauan", "Guinean", "Guyanese", "Haitian", "Herzegovinian", "Honduran", "Hungarian", "I-Kiribati", "Icelander", "Indian", "Indonesian", "Iranian", "Iraqi", "Irish", "Israeli", "Italian", "Ivorian", "Jamaican", "Japanese", "Jordanian", "Kazakhstani", "Kenyan", "Kittian and Nevisian", "Kuwaiti", "Kyrgyz", "Laotian", "Latvian", "Lebanese", "Liberian", "Libyan", "Liechtensteiner", "Lithuanian", "Luxembourger", "Macedonian", "Malagasy", "Malawian", "Malaysian", "Maldivian", "Malian", "Maltese", "Marshallese", "Mauritanian", "Mauritian", "Mexican", "Micronesian", "Moldovan", "Monacan", "Mongolian", "Moroccan", "Mosotho", "Motswana", "Mozambican", "Namibian", "Nauruan", "Nepalese", "New Zealander", "Ni-Vanuatu", "Nicaraguan", "Nigerian", "Nigerien", "North Korean", "Northern Irish", "Norwegian", "Omani", "Pakistani", "Palauan", "Panamanian", "Papua New Guinean", "Paraguayan", "Peruvian", "Polish", "Portuguese", "Qatari", "Romanian", "Russian", "Rwandan", "Saint Lucian", "Salvadoran", "Samoan", "San Marinese", "Sao Tomean", "Saudi", "Scottish", "Senegalese", "Serbian", "Seychellois", "Sierra Leonean", "Singaporean", "Slovakian", "Slovenian", "Solomon Islander", "Somali", "South African", "South Korean", "Spanish", "Sri Lankan", "Sudanese", "Surinamer", "Swazi", "Swedish", "Swiss", "Syrian", "Taiwanese", "Tajik", "Tanzanian", "Thai", "Togolese", "Tongan", "Trinidadian or Tobagonian", "Tunisian", "Turkish", "Tuvaluan", "Ugandan", "Ukrainian", "Uruguayan", "Uzbekistani", "Venezuelan", "Vietnamese", "Welsh", "Yemenite", "Zambian", "Zimbabwean"]
             
                       ]
-        
+
+    }
+    
+    func getUserData(){
+        if let user = Auth.auth().currentUser {
+            let userID = user.uid
+            ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+//                self.userData = (snapshot.value as? [UserDataField : String])!
+//                self.tableView.reloadData()
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+        }
+    }
+    
+    func setDefaultUserData(){
+        var userName = ""
+        var profileURL = ""
+        var email = ""
         
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
@@ -296,28 +353,39 @@ class SettingViewController: UIViewController, UITableViewDelegate, UITableViewD
                 for profile in user.providerData{
                     //                    let id = profile.providerID
                     //                    let email = profile.email
-                    userName = profile.displayName
-                    profileURL = profile.photoURL?.absoluteString
+                    userName = profile.displayName ?? ""
+                    email = profile.email ?? ""
+//                    profileURL = profile.photoURL?.absoluteString ?? ""
                     if profile.providerID == "facebook.com"{
                         let fbUserID = profile.uid
                         profileURL = "https://graph.facebook.com/" + fbUserID + "/picture?height=500"
                     }
                 }
             }
-//            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, gender, work"]).start(completionHandler: { (connection, result, error) -> Void in
-//                if (error == nil){
-//                    let fbDetails = result as! NSDictionary
-//                    print(fbDetails)
-//                }else{
-//                    print(error?.localizedDescription ?? "Not found")
-//                }
-//            })
+            //            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email, gender, work"]).start(completionHandler: { (connection, result, error) -> Void in
+            //                if (error == nil){
+            //                    let fbDetails = result as! NSDictionary
+            //                    print(fbDetails)
+            //                }else{
+            //                    print(error?.localizedDescription ?? "Not found")
+            //                }
+            //            })
             
         } else {
             // No user is signed in.
             // ...
         }
-
+        
+        let userdata = UserData()
+        userdata.name = userName
+        userdata.email = email
+        userdata.userProfileImage = profileURL
+        
+        if let user = Auth.auth().currentUser {
+            let data = userdata.getUserData()
+            ref.child("users/\(user.uid)").setValue(data)
+        }
+        
     }
     
     func getImageFromWeb(_ urlString: String, closure: @escaping (UIImage?) -> ()) {

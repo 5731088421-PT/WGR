@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>894307716970-srkrhvtoa8o5vq1sm3tstnfe3hhbj9n7.apps.googleusercontent.com</string>
+	<string>894307716970-roatg1k9lvbkie1d3el8suoaddq5pqtm.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.894307716970-srkrhvtoa8o5vq1sm3tstnfe3hhbj9n7</string>
+	<string>com.googleusercontent.apps.894307716970-roatg1k9lvbkie1d3el8suoaddq5pqtm</string>
 	<key>API_KEY</key>
 	<string>AIzaSyATGWGGqbGpuO6a5AquLGbqR9VU25cmxsQ</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>WorkGuru.WorkGuru</string>
+	<string>Inspirio.WorkGuru</string>
 	<key>PROJECT_ID</key>
 	<string>workguru-67fe3</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:894307716970:ios:91bf101fbd821fd0</string>
+	<string>1:894307716970:ios:3348cde716127c6a</string>
 	<key>DATABASE_URL</key>
 	<string>https://workguru-67fe3.firebaseio.com</string>
 </dict>
